@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 		  matrixr1 = mul_matrix(matrix, matrix1);
 		  print_matrix(matrixr1);
 		  print_matrix(matrixr);
+			free_matrix(matrix);
 		  free_matrix(matrix1);
 		  free_matrix(matrixr);
 		  return 0;
