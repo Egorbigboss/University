@@ -36,7 +36,6 @@ void main(){
     }
   }
   print_matrix(matrix3);
-//  printf("\nkek2\n");
   int a = 1;
   k = 0;
   matrix = init_smatrix(3,3);
@@ -44,14 +43,12 @@ void main(){
   matrix5 = mul_matrix(matrix1,matrix4);
 
   if(!matrix5){printf("\nOK\n");}
-  //printf("\nkek3\n");
   for(int i = 0;i < 3;i++){
     for(int j = 0;j < 3;j++){
       matrix1->pointer[i][j] = k;
       k++;
     }
   }
-  //printf("\nkek4\n");
   k = 0;
   for(int i = 0;i < 3;i++){
     for(int j = 0;j < 3;j++){
