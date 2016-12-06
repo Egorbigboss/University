@@ -170,7 +170,7 @@ void free_matrix(matrix_s* matrix)
 }
 
 
-matrix_s *sum_matrix(matrix_s* a, matrix_s* b, int size_a, int size_b){
+matrix_s *sum_matrix(matrix_s* a, matrix_s* b){
 	if(a->width == b->height){
 		matrix_s* result = init_smatrix(a->width - 1, b->height - 1);
     printf("%d %d\n",a->width, b->height );
@@ -190,11 +190,11 @@ matrix_s *sum_matrix(matrix_s* a, matrix_s* b, int size_a, int size_b){
 
 }
 
-matrix_s *mul_matrix(matrix_s* a, matrix_s* b, int size_a, int size_b){
+matrix_s *mul_matrix(matrix_s* a, matrix_s* b){
 	if((a->width == b->width) && (a->height == b->height)){
-		matrix_s* result = init_smatrix(size_a, size_b);
-		for(size_t i=0; i<size_a; ++i)
-				for(size_t j=0; j<size_b; ++j)
+		matrix_s* result = init_smatrix(b->height, b->height);
+		for(size_t i=0; i<b->height ; ++i)
+				for(size_t j=0; j<b->height; ++j)
 					result->pointer[i][j]+=(a->pointer[i][j])+(b->pointer[i][j]);
 		return result;
 	}

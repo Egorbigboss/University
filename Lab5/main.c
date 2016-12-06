@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 
 	  FILE *f;
 	  FILE *f1;
+		puts("kek");
 	  f = fopen(argv[1],"r");
 	  f1 = fopen(argv[2],"r");
 	  int w = 0;
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 	  fscanf(f,"%d",&w);
 	  fscanf(f,"%d",&h);
 	  puts("kek");
-
+		printf("\nkeklol %d %d\n",w,h);
 
 	  matrix = init_matrix(w,h,f,&ERRNO);
 	  puts("kek");
@@ -52,9 +53,9 @@ int main(int argc, char *argv[])
 			//det_raz(matrix,4,4,&opr);
 			printf("\nOpred - %d\n",FIND_Det(matrix->pointer,matrix->width,matrix->height));
 		  puts("kek1");
-		  matrixr = sum_matrix(matrix, matrix1, matrix->width, matrix1->height);
+		  matrixr = sum_matrix(matrix, matrix1);
 		  puts("kek2");
-		  matrixr1 = mul_matrix(matrix, matrix1, 3, 3);
+		  matrixr1 = mul_matrix(matrix, matrix1);
 		  //print_matrix(matrix);
 		  print_matrix(matrixr1);
 		  print_matrix(matrixr);

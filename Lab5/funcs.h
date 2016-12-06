@@ -24,8 +24,8 @@ void print_matrix(matrix_s* matrix);
 double det_gause(matrix_s* matrix);
 void free_matrix(matrix_s* matrix);
 double det_raz(matrix_s* matrix,int w,int h,double *opr);
-matrix_s *sum_matrix(matrix_s* a, matrix_s* b, int size_a, int size_b);
-matrix_s *mul_matrix(matrix_s* a, matrix_s* b, int size_a, int size_b);
+matrix_s *sum_matrix(matrix_s* a, matrix_s* b);
+matrix_s *mul_matrix(matrix_s* a, matrix_s* b);
 int FIND_Det( double **matrix,int sizeh,int sizew);
 double **FIND_Minor( double **matrix, int size, int str, int stb );
 
