@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 			if(!strcmp(argv[3], "D")){
 				puts("Determinant of first matrix\n");
 				int a = FIND_Det(matrix->pointer,matrix->width,matrix->height );
-				printf("\nDeterminant' - %d\n",a);
+				printf("\nDeterminant = %d\n",a);
 
 			}
 
