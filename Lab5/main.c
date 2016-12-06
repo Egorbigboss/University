@@ -9,7 +9,9 @@ int main(int argc, char *argv[])
 	  matrix_s* matrixr1;
 	  FILE *f = NULL;
 	  FILE *f1 = NULL;
+
 		if (argc != 4){puts("Not enough arguments! \n");return -2;}
+
 	  f = fopen(argv[1],"r");
 	  f1 = fopen(argv[2],"r");
 		if ((!f)){puts("Wrong file names! \n");return -1;}
@@ -21,6 +23,7 @@ int main(int argc, char *argv[])
 	  matrix = init_matrix(w,h,f,&ERRNO);
 	  if(!ERRNO){
 
+
 			printf("\nWidth - %d\nHeight - %d\n",w,h);
 			print_matrix(matrix);
 		  fscanf(f1,"%d",&w);
@@ -31,6 +34,7 @@ int main(int argc, char *argv[])
 			int j = 0;
 			int i = 0;
 			int k = 0;
+
 
 		  print_matrix(matrix1);
 
@@ -55,6 +59,7 @@ int main(int argc, char *argv[])
 
 			free_matrix(matrix);
 		  free_matrix(matrix1);
+
 			fclose(f);
 			fclose(f1);
 		  return 0;
