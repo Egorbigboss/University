@@ -65,8 +65,6 @@ matrix_s* init_matrix(int n, int m,FILE *f,int *ERRNO)
 //Функция нахождения у матрицы порядка size минора M( str, stb ) ( возвращает минор в матричном представлении )
 double** FIND_Minor( double **matrix, int size, int str, int stb )
 {
-    //int **minor = new int *[ size - 1 ];
-
 	double **minor = malloc((size - 1) * sizeof(double*));
     //m_str, m_stb - коэффициенты, с помощью которых строится сам минор
     int m_str = 0;
@@ -150,7 +148,6 @@ int FIND_Det( double **matrix, int sizeh,int sizew )
         if( matrix[ str_0 ][ j ] )
         {
             result += matrix[ str_0 ][ j ] * pow( -1, j ) * FIND_Det( FIND_Minor( matrix, size, str_0, j ), size - 1,size - 1  );
-			//printf("\n%d\n",result);
         }
     }
 

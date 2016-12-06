@@ -14,19 +14,16 @@ void main(){
       k = k + 2;
     }
   }
-  printf("\nkek2\n");
   int a = 1;
   k = 0;
   matrix = init_smatrix(3,3);
   matrix1 = init_smatrix(3,3);
-  printf("\nkek3\n");
   for(int i = 0;i < 3;i++){
     for(int j = 0;j < 3;j++){
       matrix1->pointer[i][j] = k;
       k++;
     }
   }
-  printf("\nkek4\n");
   k = 0;
   for(int i = 0;i < 3;i++){
     for(int j = 0;j < 3;j++){
