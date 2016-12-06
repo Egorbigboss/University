@@ -1,0 +1,5 @@
+alias gst="git status"
+alias gau="git add -u"
+alias gcm="git commit -m '$1'"
+alias gp="git push"
+alias gfp="gau & gcm '$1' & gp"
