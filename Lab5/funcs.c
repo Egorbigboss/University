@@ -173,14 +173,11 @@ void free_matrix(matrix_s* matrix)
 matrix_s *sum_matrix(matrix_s* a, matrix_s* b){
 	if(a->width == b->height){
 		matrix_s* result = init_smatrix(a->width, b->height);
-    printf("%d %d\n",a->width, b->height );
-		print_matrix(result);
 		for(size_t i = 0; i < a->height; i++)
 				for(size_t j = 0; j < b->width; j++){
 						for(size_t k = 0; k < a->width; k++){
 							result->pointer[i][j]+=(a->pointer[i][k])*(b->pointer[k][j]);
 						}
-						printf("\n ");
 					}
 
 		return result;
@@ -210,15 +207,12 @@ void swap_str(double** matrix, int n, int m)
 }
 
 
-/**
+
 double det_gause(matrix_s* matrix)
 {
     double det = 1;
-
-    double *temp = (double*)malloc(matrix->height *  matrix->height * sizeof(double*));
-    // memcpy(temp, matrix->pointer, sizeof(matrix->pointer));
-    // double** temp =  malloc(matrix->height * sizeof(double*) + matrix->height * matrix->height * sizeof(double));
-    // memcpy(temp,matrix->pointer, matrix->height * sizeof(double*) + matrix->height * matrix->height * sizeof(double));
+    double** temp =  malloc(matrix->height * sizeof(double*) + matrix->height * matrix->height * sizeof(double));
+    memcpy(temp,matrix->pointer, matrix->height * sizeof(double*) + matrix->height * matrix->height * sizeof(double));
 
 	for (int i = 0; i < matrix->height; i++)
     {
@@ -227,14 +221,6 @@ double det_gause(matrix_s* matrix)
        }
 
     }
-
-    for (int i = 0; i < matrix->height; i++)
-      {
-         for (int j = 0; j < matrix->height; j++)
-             printf("%d\n",temp[i][j] );
-      }
-
-
     for (int i=0; i < matrix->height; i++)
        {
            int k = i;
@@ -265,104 +251,3 @@ double det_gause(matrix_s* matrix)
     return det;
 
   }
-
-
-
-
-
-
-
-
-
-**/
-
-
-
-
-
-
-
-
-
-
-
-//
-// double det_raz(matrix_s* matrix,int w,int h,double* opr)
-// {
-// 	double det = 1;
-// 	static int pr = -1;
-//
-//
-// 	double *data;
-//
-// 	data = malloc(w * h * sizeof(double));
-//
-//
-//
-// 	printf("\npr - %d,h - %d\n",pr,h);
-//
-//
-// 	//printf("\n%d\n",sizeof(matrix->pointer));
-// 	//double** temp =  malloc((h) * sizeof(double*) + (h) * (h) * sizeof(double));
-// 	//printf("\n%d\n",(h * sizeof(double*)) + (h * h * sizeof(double)));
-//     //memcpy(temp,matrix->pointer + (matrix->height - h) * sizeof(double*), (matrix->height - h) * sizeof(double*) + (matrix->height - h) * (matrix->height - h) * sizeof(double));
-// 	//memcpy(temp,matrix->pointer + ((matrix->height - h) * sizeof(double*)), h * sizeof(double*));
-// 	double** temp =  malloc(matrix->height * sizeof(double*) + matrix->height * matrix->height * sizeof(double));
-//     memcpy(temp,matrix->pointer, matrix->height * sizeof(double*) + matrix->height * matrix->height * sizeof(double));
-// 	int i = 0;
-// 	int j = 0;
-//
-// 	if (data)
-// 	{
-// 		for (int i = 0; i < matrix->width; i++)
-// 			for (int j = matrix->width - h; j < matrix->width; j++)
-// 				if((i != pr) && (i >= matrix->width - h))
-// 				data[i*h+j] = matrix->pointer[i][j];
-//
-//
-// 	}
-// 	/**
-// 	for (i = 0; i < h ; i++)
-// 	{
-// 		memcpy(temp + (h * sizeof(double*)),matrix->pointer + ((matrix->height - h) * sizeof(double*)) + (i * (matrix->height - h) * sizeof(double)) + ((matrix->height - h) * sizeof(double)), (h) * sizeof(double*) + (h) * (h) * sizeof(double));
-// 		printf("\nkek%d\n",i);
-// 	}**/
-// 	//puts("Printing");
-//
-// 	puts("Temp matr:");
-// 	for (i = 0; i < matrix->width; i++)
-//     {
-//        for (j = matrix->width - h; j < matrix->width; j++)
-// 		   if ((i != pr) && (i >= matrix->width - h))
-// 		   //printf("\nkek%d\n",j);
-//            printf("%.2f\t", data[i*h+j]);
-//         printf("\n");
-//     }
-// 	//++pr;
-//
-// 	printf("\npr - %d,h - %d\n",pr,h);
-//
-// 	if ((w == h) && (h == 2))
-// 	{
-// 		printf("\nOpr 2x2 = %d\n",data[0]*data[3]-data[1]*data[2]);
-// 		return data[0]*data[3]-data[1]*data[2];
-// 	}
-// 	else
-// 	{
-// 		for (i = 0; i < w; i++)
-// 		{
-// 			j = 0;
-// 			*opr += pow((-1),i+j+2)*data[i*h+j]*det_raz(matrix,w-1,h-1,opr);
-// 			printf("\n%d Cikl - %d\n",i,*opr);
-// 			w = matrix->width+1;
-// 			h = matrix->width+1;
-// 			pr = i+1;
-// 			printf("\n%d\n",*opr);
-// 		}
-// 	}
-// 	puts("\n\n\n\n\n\n");
-//
-// }
-//
-//
-//

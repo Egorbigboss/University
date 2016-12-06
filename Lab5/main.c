@@ -32,19 +32,12 @@ int main(int argc, char *argv[])
 
 		  print_matrix(matrix);
 		  print_matrix(matrix1);
-		  for (int i = 0; i<matrix1->height; i++)
-		  {
-			 for (int j = 0; j<matrix1->width; j++)
-				 printf("%.2f\t", matrix1->pointer[i][j]);
-			  printf("\n");
-		  }
 		  int a = FIND_Det(matrix->pointer,matrix->width,matrix->height );
-		  printf("\nDeterminant' - %d\n",a);
+		  printf("\nDeterminant = %d\n",a);
 		  matrixr = sum_matrix(matrix, matrix1);
 		  matrixr1 = mul_matrix(matrix, matrix1);
 
-		  print_matrix(matrixr1);
-		  print_matrix(matrixr);
+			printf("Gauss Determinant = %lf\n", det_gause(matrix));
 			free_matrix(matrix);
 		  free_matrix(matrix1);
 		  free_matrix(matrixr);
