@@ -37,9 +37,9 @@ void main(){
       k++;
     }
   }
-  printf("\Testing matrix addition...\n");
+  printf("\nTesting matrix addition...\n");
   matrix2 = init_smatrix(3,3);
-  matrix2 = mul_matrix(matrix,matrix1,3,3);
+  matrix2 = mul_matrix(matrix,matrix1);
   for(int i = 0;i < 3;i++){
     for(int j = 0;j < 3;j++){
       if (matrix2->pointer[i][j] != matrix1->pointer[i][j]){
