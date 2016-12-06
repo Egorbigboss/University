@@ -147,7 +147,9 @@ int FIND_Det( double **matrix, int sizeh,int sizew )
         //( т.к. произведение будет равно нулю в любом случае )
         if( matrix[ str_0 ][ j ] )
         {
-            result += matrix[ str_0 ][ j ] * pow( -1, j ) * FIND_Det( FIND_Minor( matrix, size, str_0, j ), size - 1,size - 1  );
+            double** tempm = FIND_Minor( matrix, size, str_0, j );
+            result += matrix[ str_0 ][ j ] * pow( -1, j ) * FIND_Det( tempm, size - 1,size - 1  );
+            free(tempm);
         }
     }
 
