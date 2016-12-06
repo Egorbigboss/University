@@ -1,8 +1,5 @@
 #include "funcs.h"
 
-
-
-
 void main(){
   int k = 0;
   matrix_s* matrix;
