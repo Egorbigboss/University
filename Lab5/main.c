@@ -7,10 +7,13 @@ int main(int argc, char *argv[])
 	  matrix_s* matrix1;
 	  matrix_s* matrixr;
 	  matrix_s* matrixr1;
-	  FILE *f;
-	  FILE *f1;
+	  FILE *f = NULL;
+	  FILE *f1 = NULL;
+		if (argc != 3){puts("Not enough arguments! \n");return -2;}
 	  f = fopen(argv[1],"r");
 	  f1 = fopen(argv[2],"r");
+		if ((!f)){puts("Wrong file names! \n");return -1;}
+		if ((!f1)){puts("Wrong file names! \n");fclose(f);return -1;}
 	  int w = 0;
 	  int h = 0;
 	  fscanf(f,"%d",&w);
@@ -41,40 +44,12 @@ int main(int argc, char *argv[])
 		  matrixr1 = mul_matrix(matrix, matrix1);
 		  print_matrix(matrixr1);
 		  print_matrix(matrixr);
-		  free_matrix(matrix);
+			free_matrix(matrix);
 		  free_matrix(matrix1);
 		  free_matrix(matrixr);
 		  return 0;
 
   }
+	free_matrix(matrix);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//printf("\n%d\n",sizeof(matrix->pointer));
-/**
-for (i = 0;i < matrix->height;i++)
-{
-for (j = 0;j < matrix->height;j++)
-{
-printf("\nm[%d][%d]:%f\n",i,j,matrix->pointer[i][j]);
-}
-}
-**/
-//printf("%f\n",det_gause(matrix));
