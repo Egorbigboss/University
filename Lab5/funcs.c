@@ -149,6 +149,7 @@ int FIND_Det( double **matrix, int sizeh,int sizew )
         {
             double** tempm = FIND_Minor( matrix, size, str_0, j );
             result += matrix[ str_0 ][ j ] * pow( -1, j ) * FIND_Det( tempm, size - 1,size - 1  );
+            for(int t = 0;t < size; t++){free(tempm[t]);}
             free(tempm);
         }
     }
