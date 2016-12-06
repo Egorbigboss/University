@@ -172,7 +172,7 @@ void free_matrix(matrix_s* matrix)
 
 matrix_s *sum_matrix(matrix_s* a, matrix_s* b){
 	if(a->width == b->height){
-		matrix_s* result = init_smatrix(a->width - 1, b->height - 1);
+		matrix_s* result = init_smatrix(a->width, b->height);
     printf("%d %d\n",a->width, b->height );
 		print_matrix(result);
 		for(size_t i = 0; i < a->height; i++)
