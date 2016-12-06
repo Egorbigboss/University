@@ -6,6 +6,10 @@ void main(){
   matrix_s* matrix1;
   matrix_s* matrix2;
   matrix_s* matrix3;
+  matrix_s* matrix4;
+  matrix_s* matrix5;
+  matrix4 = init_smatrix(3,4);
+  matrix5 = init_smatrix(3,3);
   matrix3 = init_smatrix(3,3);
   printf("\nTesting matrix \n");
   for(int i = 0;i < 3;i++){
@@ -16,6 +20,8 @@ void main(){
   }
   int a = 1;
   k = 0;
+  matrix5 = mul_matrix(matrix5,matrix4);
+  if(!matrix5){printf("\nOK!\n");}
   matrix = init_smatrix(3,3);
   matrix1 = init_smatrix(3,3);
   for(int i = 0;i < 3;i++){
