@@ -49,6 +49,8 @@ int main(int argc, char *argv[])
 		  free_matrix(matrix1);
 		  free_matrix(matrixr);
 			free_matrix(matrixr1);
+			fclose(f);
+			fclose(f1);
 		  return 0;
 
   }
