@@ -58,9 +58,9 @@ void main(){
   }
   printf("\nTesting matrix multiplication...\n");
   matrix2 = init_smatrix(3,3);
-  print_matrix(matrix2);
-  print_matrix(matrix);
-  print_matrix(matrix1);
+  // print_matrix(matrix2);
+  // print_matrix(matrix);
+  // print_matrix(matrix1);
   matrix2 = sum_matrix(matrix,matrix1);
   print_matrix(matrix2);
   for(int i = 0;i < 3;i++){

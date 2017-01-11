@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	  int h = 0;
 	  fscanf(f,"%d",&w);
 	  fscanf(f,"%d",&h);
+		if((w < 0) || (h < 0)){printf("\nIncorrect parametrs! \n");return -1;}
 	  matrix = init_matrix(w,h,f,&ERRNO);
 	  if(!ERRNO){
 
@@ -28,6 +29,7 @@ int main(int argc, char *argv[])
 			print_matrix(matrix);
 		  fscanf(f1,"%d",&w);
 		  fscanf(f1,"%d",&h);
+			if((w < 0) || (h < 0)){printf("\nIncorrect parametrs! \n");return -1;}
 		  matrix1 = init_matrix(w,h,f1,&ERRNO);
 
 		  printf("\nWidth - %d\nHeight - %d\n",w,h);
